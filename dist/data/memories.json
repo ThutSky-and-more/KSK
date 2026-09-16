@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Die erste paar Wuche",
+    "date": "2026-09-01",
+    "category": "Erinnerig",
+    "author": "Klass",
+    "quote": "Mir kenned eus kaum, aber d'Insider fanget scho aa.",
+    "body": "Zwüsche neue Zimmer, neue Name und viel z'viel Material entstönd langsam die erste Storys.",
+    "featured": true,
+    "image": ""
+  },
+  {
+    "title": "Zitat vo de Wuche",
+    "date": "2026-09-04",
+    "category": "Lehrer-Spruch",
+    "author": "Anonym",
+    "quote": "Das söttet ihr eigentlich scho chönne.",
+    "body": "Klassiker. Wird vermutlich nöd s'letschte Mal gsi sii.",
+    "featured": false,
+    "image": ""
+  },
+  {
+    "title": "Pausenhof-Lore #1",
+    "date": "2026-09-11",
+    "category": "Kanti Lore",
+    "author": "Anonym",
+    "quote": "Kei Kontext. Genau so muess es sii.",
+    "body": "Die Story wird absichtlich nöd erklärt. Wer debii gsi isch, weiss es.",
+    "featured": false,
+    "image": ""
+  }
+]

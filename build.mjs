@@ -1,0 +1,10 @@
+import fs from 'fs'; import path from 'path';
+const root=process.cwd(), dist=path.join(root,'dist');
+fs.rmSync(dist,{recursive:true,force:true}); fs.mkdirSync(dist,{recursive:true});
+for(const item of ['src','admin','assets']) fs.cpSync(path.join(root,item), path.join(dist,item==='src'?'':item), {recursive:true});
+const dir=path.join(root,'content/memories');
+const memories=fs.existsSync(dir)?fs.readdirSync(dir).filter(f=>f.endsWith('.json')).map(f=>JSON.parse(fs.readFileSync(path.join(dir,f),'utf8'))):[];
+let settings={}; const sp=path.join(root,'content/settings/site.json'); if(fs.existsSync(sp)) settings=JSON.parse(fs.readFileSync(sp,'utf8'));
+fs.mkdirSync(path.join(dist,'data'),{recursive:true});
+fs.writeFileSync(path.join(dist,'data/memories.json'),JSON.stringify(memories,null,2));
+fs.writeFileSync(path.join(dist,'data/settings.json'),JSON.stringify(settings,null,2));
