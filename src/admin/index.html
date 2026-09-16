@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de-CH"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07101f"><title>Admin · Kanti Ziitkapsle</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css"><script src="/auth.js" defer></script><script src="/app.js" defer></script><script src="/admin/admin.js" defer></script></head>
+<body data-page="admin"><div class="app-shell" data-shell><main class="main"><div class="page">
+<section class="page-hero"><div class="hero-kicker">ADMIN-BEREICH</div><h1 class="gradient-text">Ziitkapsle verwalte</h1><p>Da chasch Rollen verteile, Beiträg prüefe oder lösche und de Schuelschluss für de Countdown festlege.</p></section>
+
+<section class="admin-quick-grid">
+  <a class="glass dash-card" href="/admin/cms/"><span class="tag">Decap CMS</span><h3>✓ Beiträg prüefe & lösche</h3><p>Alli Erinnerige, Lehrer-Sprüch, Memes, Fotos, Kalender-Iiträg und Kanti-Lore. Im CMS chasch Status ändere, bearbeite und mit «Delete entry» endgültig lösche.</p></a>
+  <a class="glass dash-card" href="/admin/cms/#/collections/iistellige/entries/site"><span class="tag">Countdown</span><h3>⌛ Schuelschluss festlege</h3><p>De Schuelstart isch uf de 10. August 2026 gsetzt. De genaue letschti Schueltag im Juli chasch du da festlege.</p></a>
+  <a class="glass dash-card" href="/schueler/"><span class="tag">Ansicht</span><h3>♙ Schülerbereich</h3><p>Lueg, was d'Schüler gsehnd und wie sie neui Sache im Decap CMS iiträge.</p></a>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><h2>Inhalt verwalte</h2><p class="section-sub">Direkt i d richtig Sammlig springe. Döt chasch freigeh, ablehne, bearbeite oder lösche.</p></div></div>
+  <div class="admin-content-grid">
+    <a class="mini-admin-card" href="/admin/cms/#/collections/erinnerungen"><span>🫧</span><strong>Erinnerige</strong><small>öffne / lösche</small></a>
+    <a class="mini-admin-card" href="/admin/cms/#/collections/lehrer_sprueche"><span>💬</span><strong>Lehrer-Sprüch</strong><small>öffne / lösche</small></a>
+    <a class="mini-admin-card" href="/admin/cms/#/collections/memes"><span>😂</span><strong>Memes</strong><small>öffne / lösche</small></a>
+    <a class="mini-admin-card" href="/admin/cms/#/collections/fotos"><span>📷</span><strong>Fotos</strong><small>öffne / lösche</small></a>
+    <a class="mini-admin-card" href="/admin/cms/#/collections/kalender"><span>📅</span><strong>Kalender</strong><small>öffne / lösche</small></a>
+    <a class="mini-admin-card" href="/admin/cms/#/collections/kanti_lore"><span>✨</span><strong>Kanti-Lore</strong><small>öffne / lösche</small></a>
+  </div>
+</section>
+
+<section class="section glass glass-pad">
+  <div class="section-head"><div><h2>Schüler & Rolle</h2><p class="section-sub">Jede Account cha <strong>student</strong> oder <strong>admin</strong> sii. Änderige wirke nach em nächste Login oder Token-Refresh.</p></div><button class="btn btn-ghost" type="button" data-users-reload>↻ Aktualisiere</button></div>
+  <div class="admin-message" data-admin-message hidden></div>
+  <div class="users-list" data-users-list><div class="empty-state">Benutzer werde glade …</div></div>
+</section>
+
+<div class="section"><button class="btn btn-ghost" type="button" data-logout>Logout</button></div>
+</div></main></div></body></html>

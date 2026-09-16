@@ -1,0 +1,330 @@
+backend:
+  name: git-gateway
+  branch: main
+locale: de
+media_folder: src/uploads
+public_folder: /uploads
+slug:
+  encoding: ascii
+  clean_accents: true
+  sanitize_replacement: '-'
+collections:
+- name: erinnerungen
+  label: 🫧 Erinnerige
+  label_singular: Erinnerig
+  folder: content/erinnerungen
+  create: true
+  delete: false
+  extension: json
+  format: json
+  slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+  filter:
+    field: status
+    value: pending
+  summary: '{{title}} · {{author}}'
+  editor:
+    preview: false
+  fields:
+  - label: Titel
+    name: title
+    widget: string
+  - label: Datum / Ziit
+    name: date
+    widget: datetime
+    date_format: DD.MM.YYYY
+    time_format: HH:mm
+    format: YYYY-MM-DDTHH:mm:ssZ
+  - label: Vo wem?
+    name: author
+    widget: string
+    default: Anonym
+    hint: Din Name, Spitzname oder Anonym.
+  - label: Kurzi Vorschau
+    name: excerpt
+    widget: text
+  - label: D Gschicht
+    name: body
+    widget: markdown
+    hint: Schriib gern uf Schwiizerdütsch.
+  - label: Bild
+    name: image
+    widget: image
+    required: false
+  - label: Tags
+    name: tags
+    widget: list
+    required: false
+    default: []
+  - label: Status
+    name: status
+    widget: hidden
+    default: pending
+  - label: Featured
+    name: featured
+    widget: hidden
+    default: false
+  - label: Flashback
+    name: flashback
+    widget: hidden
+    default: false
+- name: lehrer_sprueche
+  label: 💬 Lehrer-Sprüch
+  label_singular: Lehrer-Spruch
+  folder: content/lehrer-sprueche
+  create: true
+  delete: false
+  extension: json
+  format: json
+  slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+  filter:
+    field: status
+    value: pending
+  summary: '{{title}} · {{teacher}}'
+  editor:
+    preview: false
+  fields:
+  - label: Kurztitel
+    name: title
+    widget: string
+    hint: z.B. Mathe am Morge
+  - label: Datum / Ziit
+    name: date
+    widget: datetime
+    date_format: DD.MM.YYYY
+    time_format: HH:mm
+    format: YYYY-MM-DDTHH:mm:ssZ
+  - label: Lehrperson
+    name: teacher
+    widget: string
+  - label: De Spruch
+    name: quote
+    widget: text
+  - label: Kontext / was isch passiert?
+    name: context
+    widget: text
+    required: false
+  - label: Vo wem iitreit?
+    name: author
+    widget: string
+    default: Anonym
+  - label: Bild
+    name: image
+    widget: image
+    required: false
+  - label: Status
+    name: status
+    widget: hidden
+    default: pending
+  - label: Featured
+    name: featured
+    widget: hidden
+    default: false
+  - label: Flashback
+    name: flashback
+    widget: hidden
+    default: false
+- name: memes
+  label: 😂 Memes
+  label_singular: Meme
+  folder: content/memes
+  create: true
+  delete: false
+  extension: json
+  format: json
+  slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+  filter:
+    field: status
+    value: pending
+  summary: '{{title}} · {{author}}'
+  editor:
+    preview: false
+  fields:
+  - label: Titel
+    name: title
+    widget: string
+  - label: Datum / Ziit
+    name: date
+    widget: datetime
+    date_format: DD.MM.YYYY
+    time_format: HH:mm
+    format: YYYY-MM-DDTHH:mm:ssZ
+  - label: Meme-Bild
+    name: image
+    widget: image
+  - label: Caption
+    name: caption
+    widget: text
+    required: false
+  - label: Vo wem?
+    name: author
+    widget: string
+    default: Anonym
+  - label: Tags
+    name: tags
+    widget: list
+    required: false
+    default: []
+  - label: Status
+    name: status
+    widget: hidden
+    default: pending
+  - label: Featured
+    name: featured
+    widget: hidden
+    default: false
+  - label: Flashback
+    name: flashback
+    widget: hidden
+    default: false
+- name: fotos
+  label: 📷 Fotos
+  label_singular: Foto
+  folder: content/fotos
+  create: true
+  delete: false
+  extension: json
+  format: json
+  slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+  filter:
+    field: status
+    value: pending
+  summary: '{{title}} · {{author}}'
+  editor:
+    preview: false
+  fields:
+  - label: Titel
+    name: title
+    widget: string
+  - label: Datum / Ziit
+    name: date
+    widget: datetime
+    date_format: DD.MM.YYYY
+    time_format: HH:mm
+    format: YYYY-MM-DDTHH:mm:ssZ
+  - label: Foto
+    name: image
+    widget: image
+  - label: Was gseht mer / was isch passiert?
+    name: caption
+    widget: text
+    required: false
+  - label: Vo wem?
+    name: author
+    widget: string
+    default: Anonym
+  - label: Status
+    name: status
+    widget: hidden
+    default: pending
+  - label: Featured
+    name: featured
+    widget: hidden
+    default: false
+  - label: Flashback
+    name: flashback
+    widget: hidden
+    default: false
+- name: kalender
+  label: 📅 Kalender-Iiträg
+  label_singular: Kalender-Iitrag
+  folder: content/kalender
+  create: true
+  delete: false
+  extension: json
+  format: json
+  slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+  filter:
+    field: status
+    value: pending
+  summary: '{{title}} · {{date}}'
+  editor:
+    preview: false
+  fields:
+  - label: Titel
+    name: title
+    widget: string
+    hint: z.B. Sporttag, Exkursion, Klassenaabig ...
+  - label: Datum / Ziit
+    name: date
+    widget: datetime
+    date_format: DD.MM.YYYY
+    time_format: HH:mm
+    format: YYYY-MM-DDTHH:mm:ssZ
+  - label: Beschriibig
+    name: description
+    widget: markdown
+  - label: Ort
+    name: location
+    widget: string
+    required: false
+  - label: Bild
+    name: image
+    widget: image
+    required: false
+  - label: Vo wem?
+    name: author
+    widget: string
+    default: Anonym
+  - label: Status
+    name: status
+    widget: hidden
+    default: pending
+  - label: Featured
+    name: featured
+    widget: hidden
+    default: false
+  - label: Flashback
+    name: flashback
+    widget: hidden
+    default: false
+- name: kanti_lore
+  label: ✨ Kanti-Lore
+  label_singular: Kanti-Lore
+  folder: content/kanti-lore
+  create: true
+  delete: false
+  extension: json
+  format: json
+  slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+  filter:
+    field: status
+    value: pending
+  summary: '{{title}} · {{author}}'
+  editor:
+    preview: false
+  fields:
+  - label: Titel
+    name: title
+    widget: string
+  - label: Datum / Ziit
+    name: date
+    widget: datetime
+    date_format: DD.MM.YYYY
+    time_format: HH:mm
+    format: YYYY-MM-DDTHH:mm:ssZ
+  - label: Vo wem?
+    name: author
+    widget: string
+    default: Anonym
+  - label: Kurzi Vorschau
+    name: excerpt
+    widget: text
+  - label: D Lore
+    name: body
+    widget: markdown
+  - label: Bild
+    name: image
+    widget: image
+    required: false
+  - label: Status
+    name: status
+    widget: hidden
+    default: pending
+  - label: Featured
+    name: featured
+    widget: hidden
+    default: false
+  - label: Flashback
+    name: flashback
+    widget: hidden
+    default: false
